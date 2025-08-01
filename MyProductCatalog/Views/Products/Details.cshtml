@@ -1,0 +1,58 @@
+﻿@model MyProductCatalog.Models.Product
+
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-9">
+
+        <!-- Main Product Details Card -->
+        <div class="card product-card border-0 shadow-lg">
+
+            <!-- Card Header with Product Name -->
+            <div class="card-header bg-light text-center py-4">
+                <h2 class="card-title display-6 mb-0">@Html.DisplayFor(model => model.Name)</h2>
+            </div>
+
+            <!-- Card Body with Details -->
+            <div class="card-body p-4 p-md-5">
+                <div class="row align-items-center">
+
+                    <!-- Left Column: Placeholder Icon -->
+                    <div class="col-md-4 text-center mb-4 mb-md-0">
+                        <i class="bi bi-box2-heart-fill display-1 text-primary opacity-50"></i>
+                    </div>
+
+                    <!-- Right Column: Description and Price -->
+                    <div class="col-md-8">
+                        <h4 class="text-muted">Description</h4>
+                        <p class="lead">
+                            @(string.IsNullOrEmpty(Model.Description) ? "No description provided." : Model.Description)
+                        </p>
+
+                        <hr class="my-4">
+
+                        <div class="text-end">
+                            <h3 class="card-price text-success fw-bold mb-0">
+                                @Model.Price.ToString("C")
+                            </h3>
+                            <small class="text-muted">Product ID: @Model.Id</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Footer with Action Buttons -->
+            <div class="card-footer bg-light text-end p-3">
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">
+                    <i class="bi bi-pencil-square me-2"></i>Edit Product
+                </a>
+                <a asp-action="Index" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left-circle me-2"></i>Back to Catalog
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>

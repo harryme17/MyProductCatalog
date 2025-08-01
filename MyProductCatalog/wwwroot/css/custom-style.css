@@ -1,0 +1,64 @@
+﻿/* In wwwroot/css/custom-style.css */
+
+/* 1. Import a clean, modern font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* 2. Define our custom color palette using CSS variables */
+:root {
+    --primary-color: #007bff; /* A vibrant blue for buttons and highlights */
+    --primary-hover: #0056b3;
+    --light-bg: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.08);
+    --card-hover-shadow: rgba(0, 0, 0, 0.15);
+    --text-color: #333;
+    --text-muted-color: #6c757d;
+    --gradient-start: #e0c3fc;
+    --gradient-end: #8ec5fc;
+}
+
+/* 3. Apply the base styles to the body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+    color: var(--text-color);
+}
+
+/* 4. Style the main content container to "float" on the page */
+.main-content-container {
+    background-color: var(--light-bg);
+    border-radius: 15px;
+    padding: 2rem 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    min-height: 80vh;
+}
+
+/* 5. Custom styles for our product cards */
+.product-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--card-shadow);
+    transition: all 0.3s ease-in-out;
+}
+
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px var(--card-hover-shadow);
+    }
+
+    .product-card .card-title {
+        font-weight: 600;
+        color: var(--primary-color);
+    }
+
+    .product-card .card-price {
+        font-weight: 500;
+        font-size: 1.25rem;
+    }
+
+/* 6. A little flair for form inputs */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
